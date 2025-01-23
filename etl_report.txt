@@ -1,0 +1,77 @@
+ETL Process Report
+==================================================
+Starting data fetch...
+Data successfully fetched in 8.28 seconds!
+Raw data preview:
+[
+  {
+    "customer_id": 4,
+    "product_id": 32,
+    "transaction_date": "2023-01-01 13:07:24",
+    "transaction_amount": 168.44,
+    "transaction_type": "Outgoing",
+    "spend_category": "Electronics"
+  },
+  {
+    "customer_id": 6,
+    "product_id": 32,
+    "transaction_date": "2023-01-01 15:56:07",
+    "transaction_amount": 832.92,
+    "transaction_type": "Outgoing",
+    "spend_category": "Electronics"
+  },
+  {
+    "customer_id": 7,
+    "product_id": 37,
+    "transaction_date": "2023-01-01 03:08:20",
+    "transaction_amount": 67.06,
+    "transaction_type": "Outgoing",
+    "spend_category": "Clothing"
+  },
+  {
+    "customer_id": 3,
+    "product_id": 34,
+    "transaction_date": "2023-01-01 04:06:55",
+    "transaction_amount": 333.12,
+    "transaction_type": "Outgoing",
+    "spend_category": null
+  },
+  {
+    "customer_id": 4,
+    "product_id": 36,
+    "transaction_date": "2023-01-01 11:30:27",
+    "transaction_amount": 348.9,
+    "transaction_type": "Outgoing",
+    "spend_category": "Home"
+  }
+]
+Starting data processing...
+Logging discrepancies...
+Missing categories logged in missing_categories_log.csv.
+Data processing completed.
+Transformed data preview (last 5 rows):
+ customer_id  product_id    transaction_date  transaction_amount transaction_type spend_category product_category transaction_category  total_transaction_value
+           5          40 2023-01-31T23:36:24              290.30         Outgoing        Unknown            Other                 high              98690034.01
+           2          34 2023-01-31T05:28:53              283.99         Outgoing           Toys            Other                 high              81117094.41
+          10          35 2023-01-31T12:37:06              519.73         Outgoing           Toys            Other                 high                244762.07
+           7          35 2023-01-31T16:18:26              558.23         Outgoing           Toys            Other                 high              97124599.01
+           2          38 2023-01-31T16:26:37              761.12         Outgoing    Electronics             Tech                 high              81117094.41
+Loading data into MySQL...
+Inserting data chunk with 500 rows...
+Inserting data chunk with 234 rows...
+Inserted chunk with 234 rows.
+Inserted chunk with 500 rows.
+Inserted chunk with 500 rows.
+Inserted chunk with 500 rows.
+Data successfully loaded into MySQL database.
+Querying insights...
+Connected to MySQL database.
+Product Category: Other, Total Transactions: 9961
+Product Category: Apparel, Total Transactions: 2807
+Product Category: Tech, Total Transactions: 3690
+Product Category: Home Goods, Total Transactions: 3350
+Customer ID: 3, Total Value: 1490803836.2262783
+Customer ID: 5, Total Value: 1085724981.1451511
+Customer ID: 7, Total Value: 1068467229.5434961
+Customer ID: 2, Total Value: 956780276.6201401
+Customer ID: 6, Total Value: 4445213.923391342
